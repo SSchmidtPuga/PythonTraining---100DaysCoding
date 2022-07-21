@@ -1,0 +1,29 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title%}
+<h1>Title </h1>
+{%endblock%}
+
+{% block styles %}
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+
+{% block content%}
+<body>
+    <div class="jumbotron text-center">
+    <div class="container">
+        <h1 class="Title"> Coffee & Wifi</h1>
+        <h3>Want to work in a coffe but need power and wifi</h3>
+        <hr>
+        <h3>You have found the right place! Checkout my collection of cafes</h3>
+        <form action="/coffe" method="get" >
+        <button type="submit">Show me! </button>
+        </form>
+    </div>
+    </div>
+</table>
+</body>
+{% endblock %}

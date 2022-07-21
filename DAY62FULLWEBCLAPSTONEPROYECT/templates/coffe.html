@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title%}
+<h1>Title </h1>
+{%endblock%}
+
+
+{% block styles %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<body>
+<h1>All Cafes</h1>
+<table class="table">
+  <thead>
+     	  {% for row in cafes %}
+	  <tr>
+		  	{% for item in row %}
+				{% if item[0:4] == "http" %}
+				<td><a href="{{ item }}">Maps Link</a></td>
+				{% else %}
+				<td>{{ item }}</td>
+				{% endif %}
+			{% endfor %}
+	  </tr>
+	  {% endfor %}
+
+</table>
+<a href="{{ url_for('main') }}"> Home</a>
+<span>-----
+<a href="{{ url_for('add') }}"> Add a cafe place</a>
+</span>
+
+</body>
+{% endblock %}
+
